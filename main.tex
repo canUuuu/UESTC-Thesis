@@ -1,0 +1,62 @@
+
+\documentclass[bachelor]{thesis-uestc}
+\title{论文标题}{Title of the Thesis}
+
+\author{宋邦睿}{Bangrui Song}
+\advisor{名字\chinesespace }{name}
+\school{计算机科学与工程(网络空间安全)学院}{School of Computer Science and Technology (School of Cyber Security)}
+\major{计算机科学与技术}{Computer Science and Technology}
+\studentnumber{2023110903001}
+
+% 设置图像路径为 ./pic/ 文件夹
+\graphicspath{{./pic/}}
+
+% require all the usepackages here
+% \usepackage{algorithm2e}
+
+\begin{document}
+
+\makecover
+
+% This is a template of mutiple files.
+% The folders chapters/ and misc/ have the related files
+
+% abstract
+\input{miscellaneous/chinese_abstract}
+
+% table of contents
+\thesistableofcontents
+
+% thesis contents
+% \input{chapter/chapter_1}
+% \input{chapter/chapter_2}
+% \input{chapter/chapter_3}
+% \input{chapter/chapter_4}
+
+
+% miscellaneous
+% \input{miscellaneous/acknowledgement}
+% \input{miscellaneous/appendix}
+
+%==================reference================%
+% 用uestc-thesis环境定义的参考文献格式导入参考文献
+% % Uncomment to list all the entries of the database.
+% % \nocite{*}
+% \thesisbibliography{reference}
+
+% %原生的`\bibliography`命令导入文献列表
+% %Uncomment the following code to load bibliography database with native
+% \bibliography command.
+% %用于生成完整的参考文献列表，不管在正文中是否有实际引用。
+% \nocite{*}
+
+% \bibliographystyle{thesis-uestc}
+% \bibliography{reference}
+%
+
+%外文期刊原文&译文
+% \thesisaccomplish{publications}w
+% \input{miscellaneous/translate_original}
+% \input{miscellaneous/translate_chinese}
+
+\end{document}
