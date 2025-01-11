@@ -20,7 +20,8 @@
 
 \RequirePackage{setspace}
 \RequirePackage{multirow}
-\RequirePackage[tbtags]{amsmath}
+\RequirePackage[many]{tcolorbox}%assignment环境
+\RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
 \RequirePackage{lmodern}
@@ -93,8 +94,13 @@
 \RequirePackage{ifoddpage}
 \RequirePackage{pdfpages}
 
+
+
+
+
 % ================图片目录===============
-\graphicspath{{}}
+%设置图片路径
+\graphicspath{{./pic/}}
 
 \RequirePackage[titles]{tocloft}
 \RequirePackage[labelformat=simple]{subcaption}
@@ -191,15 +197,10 @@
 \renewcommand{\footnotesize}{\fontsize{9pt}{10.8pt}\selectfont}
 \renewcommand{\small}{\fontsize{10.5pt}{12.6pt}\selectfont}
 \renewcommand\footnotelayout{\fontsize{9}{11.7}\selectfont}
-% ==================脚注=====================
+
 \renewcommand{\thefootnote}{\ifcase\value{footnote}\or\ding{172}\or
 \ding{173}\or\ding{174}\or\ding{175}\or\ding{176}\or\ding{177}\or
 \ding{178}\or\ding{179}\or\ding{180\or\ding{181}}\fi}
-% unicode编码
-% {172} 对应符号：①
-% {173} 对应符号：②
-% {174} 对应符号：③
-
 
 \renewcommand{\footnoterule}{\vfill\noindent\vspace{0.9mm}\hspace{27pt}\rule{5.05cm}{0.02cm}\vspace*{2.6pt}}
 
@@ -642,7 +643,6 @@
     \cline{2-2}
             & \\
     \cline{2-2}
-%=================标题有几行就打几个\cline{2-2}==========
   \end{tabular}\hspace*{\fill} \\[\baselineskip]
   \begin{tabular}{>{\bfseries\fontsize{16pt}{16pt}\selectfont}l
       >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
@@ -1119,6 +1119,42 @@
 
 \newcommand{\thesisaccomplish}{\thesisloadaccomplish}
 
+%==============assignment环境============
+% 使用方法：
+% \begin{assignment}{assignment content}
+%   input text
+% \end{assignment}
+
+
+\ifchinesebook{
+  \newtcbtheorem[]{assignment}{任务}%
+  {enhanced,
+  colback = black!5, %white,
+  colbacktitle = black!5,
+  coltitle = black,
+  boxrule = 0pt,
+  frame hidden,
+  borderline west = {0.5mm}{0.0mm}{black},
+  fonttitle = \bfseries\sffamily,
+  breakable,
+  before skip = 3ex,
+  after skip = 3ex
+  }{task}
+}{
+  \newtcbtheorem[]{assignment}{Assignment}%
+    {enhanced,
+    colback = black!5, %white,
+    colbacktitle = black!5,
+    coltitle = black,
+    boxrule = 0pt,
+    frame hidden,
+    borderline west = {0.5mm}{0.0mm}{black},
+    fonttitle = \bfseries\sffamily,
+    breakable,
+    before skip = 3ex,
+    after skip = 3ex
+    }{problem}
+}
 % ===============定理设置===============
 \newtheoremstyle{dotless}{0pt}{0pt}{\normalfont}{24pt}{\strong}{}{ }{}
 \theoremstyle{dotless}
